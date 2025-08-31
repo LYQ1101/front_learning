@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>我的网页</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <style>
+            p{
+                color: red;
+                font-size: 55px;
+            }
+                  
+
+            .test1{
+                color: brown;
+            }
+
+
+            h1.sticky {
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+            background-color: pink;
+            border: 2px solid #4CAF50;
+            text-align: center;
+            z-index:1100;
+            }
+
+            h2{
+                text-align: center;
+                width: auto;
+                font-size: 60px;
+            }
+            h2 img {
+                display: inline-block; /* 让图片作为行内块元素 */
+                box-shadow: #0060c6 0px 0px 10px; /* 阴影只作用于图片 */
+            }
+
+            .centertest {
+                margin: auto;
+                font-size: 50px;
+                width: 50%;
+                text-align: center;
+                border: 3px solid #73AD21;
+                color: blue;
+
+            }
+ 
+            body{
+                background-image: url("backgroundpic.jpg");
+                background-size: cover;
+                background-attachment: fixed;/* 添加这一行让背景固定 */
+            }
+
+            h2{
+                text-align: center;
+            }
+
+            ul {
+                display: flex;
+                position: sticky;      /* 让导航栏粘性固定 */
+                top: 70px;                /* 距离顶部为0 */
+                z-index: 1000;         /* 保证在其他内容之上 */
+                font-size: 30px;
+                width: 100%;                  /* 宽度铺满 */
+                list-style-type: none;
+                margin: 0;                    /* 去掉外边距 */
+                padding: 0;
+                background-color: rgb(174, 36, 59);       /* 可选：导航栏背景色 */
+                box-shadow: #0060c6 10px 10px 10px; /* 阴影效果 */
+                border-radius: 10px;
+            }
+
+            li {
+                flex: 1;                      /* 平均分配宽度 */
+                text-align: center;
+            }
+
+            li a {
+                float: left; /* 水平方向上一个挨一个显示元素 */
+                display: block;
+                width: 100%;                  /* 链接宽度自适应 */
+                color:white;
+                text-decoration: none; /* 去除下划线 */
+                transition: all 0.3s ease; /* 为悬停效果添加过渡效果 */
+            }
+
+            li a:hover:not(.active) {
+                background-color: #589f30;
+                border-radius: 10px;
+            }   /* 鼠标悬停时的背景色 */
+
+            li a:link {
+                color: rgb(255, 255, 255);      /* 未访问时的颜色 */
+            }
+            li a:visited {
+                color: rgb(245, 145, 245);     /* 已访问时的颜色 */
+            }
+            li a:hover {
+                color: rgb(0, 0, 0);     /* 鼠标悬停时的颜色 */
+            }
+            li a:active {
+                color: rgb(243, 46, 46);        /* 鼠标点击时的颜色 */
+            }
+
+
+            .downpull {
+                position: relative;
+                display: inline-block;
+            }
+            .downpullcontent {
+                display: block;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s;
+                position: absolute;
+                box-shadow: #000000 10px 10px 10px ;
+                top:100%;
+                background-color: #3800c6;
+                color: #fff;
+                min-width: 160px;
+                z-index: 1;
+                border-radius: 10px;
+            }
+            .downpull:hover .downpullcontent {
+                opacity: 1;
+                pointer-events: auto;
+                border-radius: 10px;
+            }
+
+            
+
+            .tooltip {
+                font-size: 45px;
+                margin-top: 40px ;
+                color:rgb(83, 7, 19);
+                position: relative;
+                display:block;
+                text-decoration: none; /* Remove underline */
+                
+            }
+            .tooltip .tooltiptext {
+                font-size: 40px;
+                visibility: visible;
+                opacity: 0;
+                transition: opacity 0.3s;
+                width: 250px;
+                background-color: rgb(188, 11, 11);
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                position: absolute;
+                z-index: 1;
+            }
+            .tooltip:hover .tooltiptext {
+                opacity: 1;
+            }
+
+            #jianbian1{
+                height: 200px;
+                background-image: linear-gradient(to right, rgba(255,0,0,1), rgba(255,0,0,0));
+                font-size: 70px;
+                color: white;
+                text-shadow: #0060c6 10px 10px 10px; /* 阴影效果 */
+            }
+
+            #guodu{
+                width: 100px;
+                height: 100px;
+                background: purple;
+                animation: gradientAnimation 3s infinite;
+            }
+            div#guodu:hover {
+                width: 200px;
+                height: 200px;
+                transition: width 0.5s, height 0.5s; /* 添加过渡效果 */
+            }
+            #guodu2{
+                width: 100px;
+                height: 100px;
+                background:red;
+                transition: width 0.2s, height 0.2s,transform 0.5s; /* 添加过渡效果 */
+            }
+            div#guodu2:hover {
+                
+                transform: rotate(180deg);
+            }
+
+            .guodutext{
+                display: flex;
+                gap: 20px; /* 设置子元素之间的间距 */
+                flex-wrap: wrap; /* 如果空间不足，允许换行 */
+                margin-top: 20px; /* 添加顶部间距 */
+            }
+
+        </style>
+
+    
+
+    </head>
+    <body>
+        <h1 class="sticky">
+            无暇の人
+        </h1>
+
+        <ul>
+            <li><a href="1"><i class="fa fa-home"></i> 主页</a></li>
+            <li class="downpull">
+                <a href="#"><i class="fa fa-tags"></i> 标签</a>
+                <div class="downpullcontent">
+                    <a href="1">纯爱</a>
+                    <a href="2">校园</a>
+                    <a href="3">悬疑</a>
+                    <a href="4">这是导航栏下拉菜单的测试</a>
+                </div>
+            </li>
+            <li><a href="#"><i class="fa fa-list-ol"></i> 排行</a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i> 联系我们</a></li>
+            <li><a href="#"><i class="fa fa-cogs"></i> 技术支持</a></li>
+        </ul>
+
+        <h2>
+            <img src="1.webp" alt="爱莉希雅" title="爱莉希雅">
+        </h2>
+        <h3>这里是爱莉希雅的简介</h3>
+        <form action="" method="post" name="" target="" name="">
+            <input type="text">
+            密码：<input type="password">
+            <input type="submit" value="确定">
+        </form>
+        <p style="color:blue;size: 50px;">这是CSS内联样式测试</p>
+        <div class="centertest">这是水平居中的测试</div>
+        <p>这是内部样式测试</p>
+        欢迎交流技术栈！
+        <a href="./son.html">这是子站链接</a>
+
+        <p class="test1">这是类选择器的测试</p>
+        <p>来回滚动一下</p>
+        <p>滚动一下，这是sticky测试</p>
+        <p>滚动一下，这是sticky测试</p>
+        <p>滚动一下，这是sticky测试</p>
+        <p>滚动一下，这是sticky测试</p>
+
+        <div class="downpull">
+            <span>这是下拉菜单测试</span>
+            <div class="downpullcontent">
+                <p>下拉栏1</p>
+                <p>下拉栏2</p>
+                <p>下拉栏3</p>
+            </div>
+        </div>
+
+        <div class="tooltip">
+            这是悬浮提示框测试
+            <span class="tooltiptext">这是提示内容</span>
+        </div>
+        <div id="jianbian1">这是渐变&文字阴影的测试</div>
+        <div id="guodu">这是过渡的测试</div>
+        <div class="guodutext">
+            <div id="guodu2"></div>
+            <div id="guodu2"></div>
+            <div id="guodu2"></div>
+            <div id="guodu2"></div>
+            <div id="guodu2"></div>
+            <div id="guodu2"></div>
+        </div>
+        
+    </body>
+</html>
